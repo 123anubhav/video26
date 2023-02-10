@@ -80,7 +80,7 @@ Your browser does not support the video tag.
 	<div id="bound-three" class="scroll-bound">
 		<div class="content">
 			<p>MP4 Video 23 - Keyframe Interval 20</p>
- 			<video width="800" muted preload>
+ 			<video width="800" muted preload>  
    			<!-- <source src="https://cdn.ananaspizza.de/file/malte-image-store/keyframe-interval-20.mp4" type="video/mp4"> -->
                <source src="video12.mp4" type="video/mp4">
     		<!-- <p>Your user agent does not support the HTML5 Video element.</p> -->
@@ -122,7 +122,7 @@ Your browser does not support the video tag.
 		if(video.duration) {
 			const distanceFromTop = window.scrollY + bound.getBoundingClientRect().top;
 			const rawPercentScrolled = (window.scrollY - distanceFromTop) / (bound.scrollHeight - window.innerHeight);
-			const percentScrolled = Math.min(Math.max(rawPercentScrolled, 0), 1.5);  // 0,1 --> original 
+			const percentScrolled = Math.min(Math.max(rawPercentScrolled, 0), 1);  // 0,1 --> original 
 			
 			video.currentTime = video.duration * percentScrolled;
 		}
@@ -132,10 +132,10 @@ Your browser does not support the video tag.
     document.addEventListener("touchmove", function(event) {
         if (event.touches[0].clientY > window.innerHeight / 2) {
         //  video.playbackRate += 0.25;   // Orignal
-          video.playbackRate += 0.15;
+          video.playbackRate += 0.50;
         } else {  
          // video.playbackRate -= 0.25;  // Original    
-          video.playbackRate -= 0.15;
+          video.playbackRate -= 0.50;
         }
       });   
 }
